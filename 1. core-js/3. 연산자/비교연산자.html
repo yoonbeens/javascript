@@ -19,11 +19,11 @@
         
         //동등 비교는 결과 예측이 힘들기 때문에 조심하셔야 합니다.
         console.log('----------------------------------')
-        console.log('0' == '');
-        console.log(0 == '');
-        console.log(0 == '0');
-        console.log(false == 'false');
-        console.log(false == '0');
+        console.log('0' == ''); //false
+        console.log(0 == ''); //true
+        console.log(0 == '0'); //true
+        console.log(false == 'false'); //false
+        console.log(false == '0'); //true
 
         //일치 비교에서는 NaN을 주의.
         //NaN은 자신과 일치하지 않는 유일한 값입니다.

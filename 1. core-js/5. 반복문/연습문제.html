@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
-    <script>
 
+<body>
+
+    <script>
         // Math.random(): 0.0이상 1.0미만의 랜덤값.
         // Math.floor(): 내림, Math.ceil(): 올림, Math.round(): 반올림
-        var rn1 = Math.floor((Math.random()*100) + 1);
+        var rn1 = Math.floor((Math.random() * 100) + 1);
 
-        var rnA = Math.floor((Math.random()*20) + 1);
-        var rnB = Math.floor((Math.random()*20) + 1);
-        var p = Math.floor((Math.random()*3) + 1);
-        var result = prompt();
+        var rnA = Math.floor((Math.random() * 20) + 1);
+        var rnB = Math.floor((Math.random() * 20) + 1);
+        var p = Math.floor((Math.random() * 3) );
 
-        if(p == 1) {
-            var r = rnA + rnB
+        if (p == 0) {
+            var plus = rnA + rnB;
             var result = prompt(rnA + '+' + rnB);
-            if(result == r) {
-                
+            if (result == plus) {
+                alert('정답입니다!');
+            } else {
+                alert('오답입니다');
             }
-        } else if(p == 2) {
+        } else if (p == 1) {
+            var multi = rnA * rnB;
+            var result = prompt(rnA + 'x' + rnB);
+            if (result == multi) {
+                alert('정답입니다!');
+            } else {
+                alert('오답입니다');
+            }
+        } else if (p == 2) {
+            if (rnA > rnB) {
+                var minus = rnA - rnB;
+                var result = prompt(rnA + '-' + rnB);
 
+                if (result == minus) {
+                    alert('정답입니다!');
+                } else {
+                    alert('오답입니다');
+                }
+            } else if (rnA < rnB) {
+                var minus2 = rnB - rnA;
+                var result = prompt(rnB + '-' + rnA)
+                if (result == minus2) {
+                    alert('정답입니다!');
+                } else {
+                    alert('오답입니다');
+                }
+            }
         } else {
-
+            console.log('하하하하하 하하하 아하하하');
         }
-        
-
     </script>
 
 </body>
+
 </html>
