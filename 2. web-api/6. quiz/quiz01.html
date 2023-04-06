@@ -16,10 +16,10 @@
         value값을 같이 찍어 주세요.
         (checked -> 체크 했는지의 여부)
     -->
-    <input type="checkbox" value="1"> 조항1
+    <!-- <input type="checkbox" value="1"> 조항1
     <input type="checkbox" value="2"> 조항2
     <input type="checkbox" value="3"> 조항3
-    <input type="checkbox" value="4"> 조항4
+    <input type="checkbox" value="4"> 조항4 -->
 
     <br>
 
@@ -27,51 +27,95 @@
         2. 확인 버튼을 클릭했을 때
         input 태그의 공백 여부, 체크 여부를 확인하세요.
     -->
-    ID: <input type="text" id="id">
+    <!-- ID: <input type="text" id="id">
     기억하기 <input type="checkbox" id="remember">
-    <button id="check2">확인</button>
+    <button id="check2">확인</button> -->
 
 
     <script>
-        const $checkbox = document.querySelectorAll('input[type=checkbox]');
+        // const $checkbox = document.querySelectorAll('input[type=checkbox]');
 
-        for (let $c of $checkbox) {
+        // for (let $c of $checkbox) {
+        //     $c.addEventListener('change', e => {
+        //         if (e.target.checked) {
+        //             alert(`${e.target.value}번 항목에 동의하셨습니다.`);
+        //         }
+        //     });
+        // }
+
+        // const $text = document.getElementById('id');
+        // const $remember = document.getElementById('remember');
+        // const $check2 = document.getElementById('check2');
+
+        // $check2.addEventListener('click', e => {
+        //     if($text.value === '') {
+        //         alert('아이디를 입력해주세요')
+        //     } else if(!$remember.checked) {
+        //             alert('기억하기를 눌러주세요')
+        //         }
+            
+        // });
+
+        
+            
+
+
+    </script>
+
+
+    <!--
+        1. 다음 체크박스 버튼을 클릭했을 때
+        '동의했습니다!' 경고창을 띄우고
+        value값을 같이 찍어 주세요.
+        (checked -> 체크 했는지의 여부)
+    -->
+
+    <input type="checkbox" value="1"> 조항1
+    <input type="checkbox" value="2"> 조항2
+    <input type="checkbox" value="3"> 조항3
+    <input type="checkbox" value="4"> 조항4
+
+    <script>
+        const $check = document.querySelectorAll('input[type="checkbox"]');
+        // console.log($check);
+        for(let $c of [...$check]) {
             $c.addEventListener('change', e => {
-                if (e.target.checked) {
-                    alert('동의하셨습니다.')
-                } else {
-                    e.preventDefault();
+                if(e.target.checked) {
+                    alert(`${e.target.value}번 항목에 동의하셨습니다.`);
                 }
             });
         }
 
-        const $text = document.getElementById('id');
+    </script>
+
+   
+
+    <br>
+
+    <!--
+        2. 확인 버튼을 클릭했을 때
+        input 태그의 공백 여부, 체크 여부를 확인하세요.
+    -->
+
+    ID: <input type="text" id="id">
+    기억하기 <input type="checkbox" id="remember">
+    <button id="check2">확인</button>
+
+    <script>
+        const $result = document.getElementById('id');
         const $remember = document.getElementById('remember');
-        const $check2 = document.getElementById('check2');
 
-        $check2.addEventListener('click', e => {
-            if($text.value === '') {
-                alert('아이디를 입력해주세요')
+        document.getElementById('check2').onclick = function(e) {
+            console.log('value값: ' + $result.value);
+            console.log('check값: ' + $remember.checked);
+
+            if($result.value === '') {
+                alert('아이디는 필수값입니다!');
+            } else if(!$remember.checked) {
+                alert('기억하기를 체크하지 않았습니다.');
             }
-            if(!$remember.checked) {
-                    alert('기억하기를 눌러주세요')
-                }
-            
-        });
+        }
 
-        // if($text.value === '') {
-        //     if($check2.click)
-
-        //     alert('아이디를 입력해주세요')
-        // }
-        
-        
-
-
-
-        // if($checkbox.target.checked) {
-        //     alert('조항에 동의하셨습니다' + $checkbox.value);
-        // }
     </script>
 
 
