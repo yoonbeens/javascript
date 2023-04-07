@@ -126,44 +126,45 @@
         const $innerP = document.querySelector('.inner > p');
         const $innerA = document.querySelector('.inner > a');
 
-        const $leftIn = document.querySelector('.left > div > img[src="./img/1.jpg"]')
+        const $leftIn = document.querySelector('.left > div > img[src="./img/1.jpg"]');
 
-        const $leftChild = document.querySelector('.left > div')
+        const $leftChild = document.querySelector('.left > div');
 
         $btn1.addEventListener('click', e => {
 
             $dark.classList.toggle('dark')
 
             if ($dark.classList.contains('dark')) {
-                $dark.style.background = 'black'
+                $dark.style.background = 'black';
                 $center.style.color = 'white';
                 $innerP.style.color = 'white';
                 $innerA.style.color = 'white';
                 $btn1.textContent = '밝게 보기';
             } else {
-                $dark.style.background = 'white'
+                $dark.style.background = 'white';
                 $center.style.color = 'black';
                 $innerP.style.color = 'black';
                 $innerA.style.color = 'black';
                 $btn1.textContent = '어둡게 보기';
             }
-        })
+        });
 
         $btn2.addEventListener('click', e => {
             // $btnName.classList.toggle('')
 
             if ($btnName.textContent === '이름 보기') {
-                $btnName.textContent = '내용 보기'
-                $innerP.innerHTML = ''
-                $innerP.innerHTML += '<p>홍길동<br>20세<br>능력단위<br>Java, Oracle, Jsp, CSS, JavaScript</p>'
+                $btnName.textContent = '내용 보기';
+                $innerP.innerHTML = '';
+                $innerP.innerHTML += '<p>홍길동<br>20세<br>능력단위<br>Java, Oracle, Jsp, CSS, JavaScript</p>';
+                $innerA.style.display = 'none';
             } else {
-                $btnName.textContent = '이름 보기'
-                $innerP.innerHTML = ''
+                $btnName.textContent = '이름 보기';
+                $innerP.innerHTML = '';
                 $innerP.innerHTML +=
-                    '<p>자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다.</p>'
-
+                    '<p>자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다.</p>';
+                    $innerA.style.display = 'block';
             }
-        })
+        });
 
         const $textarea = document.createElement('textarea');
 
@@ -171,23 +172,22 @@
 
         $btn3.addEventListener('click', e => {
             if ($btn3.textContent === '메모장 모드') {
-                $btn3.textContent = '사진모드'
+                $btn3.textContent = '사진모드';
                 $leftIn.remove($leftIn);
 
                 $leftChild.appendChild($textarea);
-                $textarea.setAttribute('class', 'memo')
+                $textarea.setAttribute('class', 'memo');
 
-
-                $listbtn.textContent = '등록하기'
+                $listbtn.textContent = '등록하기';
                 $leftChild.appendChild($listbtn);
 
             } else {
-                $btn3.textContent = '메모장 모드'
+                $btn3.textContent = '메모장 모드';
                 $leftChild.appendChild($leftIn);
                 $textarea.remove($textarea);
-                $listbtn.remove($listbtn)
+                $listbtn.remove($listbtn);
             }
-        })
+        });
     </script>
 
 </body>
