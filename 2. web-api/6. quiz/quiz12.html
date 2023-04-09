@@ -65,7 +65,20 @@
         3. data-id 값에 알맞는 태그에 active속성 추가.
         */
 
-    
+
+        const $menu = document.querySelectorAll('.toggle-menu');
+        const $toggle = document.querySelectorAll('.toggle li');
+
+        for (let i = 0; i < $toggle.length; i++) {
+            $toggle[i].addEventListener('click', e => {
+              for (let j = 0; j < $menu.length; j++) {
+                  $menu[j].classList.remove('active');
+              }
+              $menu[i].classList.add('active');
+            });
+        }
+
+
 
     </script>
     

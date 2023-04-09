@@ -58,6 +58,18 @@
 	이벤트 전파 방식을 사용해서 
 	삭제를 누를 때마다 해당 tr이 지워질 수 있도록 처리해 보세요.
    */
+
+    const $btn = document.querySelectorAll('button');
+
+
+    for (const $b of $btn) {
+        $b.addEventListener('click', e => {
+            e.target.parentNode.parentNode.remove();
+        });
+    }
+
+
+
     </script>
 
 </body>
