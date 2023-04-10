@@ -35,15 +35,17 @@
 	사진을 클릭할 때마다 결과 화면이 그 사진으로 바뀌면 됩니다. 
 	*/
 
-    const $img = document.querySelectorAll('ul img'); //왜 ul > img라고 쓰면 안될까?
-    const $result = document.querySelector('.result > img'); //이건 되는데
-    
-        for (let i = 0; i < $img.length; i++) {
-            $img[i].addEventListener('click', e => {
-                $result.src = $img[i].src;
-            });
+    const $ul = document.querySelector('ul');
+    const $img = document.querySelector('.result img');
+
+    $ul.addEventListener('click', e => {
+        if(!e.target.matches('ul > li > img')) {
+            return;
         }
 
+        $img.setAttribute('src', e.target.src);
+    });
+      
 
     </script>
     
