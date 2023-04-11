@@ -10,44 +10,66 @@
     <!-- reset.css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
 
-    <!-- custom css -->
+    <!-- custom.css -->
     <link rel="stylesheet" href="./main.css">
-
-    <!-- custom js -->
-    <script src="./app.js" defer></script>
 
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
 
+    <script src="./support.js" defer></script>
 </head>
 
 <body>
-    <h2>할 일 목록 만들기</h2>
-
-    <div class="name-form">
-        <h3 class="name-title"></h3>
-        <input type="text" placeholder="할 일을 입력하세요." class="name-input">
-        <button class="btn1">확인</button>
+    <div class="wrapper">
+        <div class="scheduler">
+            <section class="main">
+                <h1>일정 관리</h1>
+                <div class="type">
+                    <input type="text" placeholder="할 일을 입력하세요.">
+                    <div class="icon"><span class="lnr lnr-plus-circle"></span></div>
+                </div>
+            </section>
+            <ul id="todoList">
+                <div class="papa">
+                    <li>
+                        <div class="left">
+                            <input type="checkbox">
+                            <div class="text">할 일1</div>
+                        </div>
+                        <div class="right">
+                            <span class="lnr lnr-undo"></span>
+                            <span class="lnr lnr-cross-circle"></span>
+                        </div>
+                    </li>
+                </div>
+                <div class="papa">
+                    <li>
+                        <div class="left">
+                            <input type="checkbox">
+                            <div class="text">할 일2</div>
+                        </div>
+                        <div class="right">
+                            <span class="lnr lnr-undo"></span>
+                            <span class="lnr lnr-cross-circle"></span>
+                        </div>
+                    </li>
+                </div>
+                <div class="papa">
+                    <li>
+                        <div class="left">
+                            <input type="checkbox">
+                            <div class="text">할 일3</div>
+                        </div>
+                        <div class="right">
+                            <span class="lnr lnr-undo"></span>
+                            <span class="lnr lnr-cross-circle"></span>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
     </div>
-
-    <div class="todo-form">
-        <!-- <input type="text" placeholder="할 일1" class="todo-input"> -->
-        <div class="list">할 일1</div>
-        
-        <button class="btn2">확인</button>
-    </div>
-
-    <ul class="todo-list">
-
-    </ul>
-
-
-    <span class="lnr lnr-plus-circle"></span>
-    <span class="lnr lnr-cross-circle"></span>
-    <span class="lnr lnr-checkmark-circle"></span>
-    <span class="lnr lnr-undo"></span>
-
 </body>
 
 </html>

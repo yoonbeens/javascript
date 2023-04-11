@@ -1,0 +1,144 @@
+.wrapper {
+    background-color: lightgray;
+    height: 100vh;
+    padding-top: 50px;
+    font-size: 25px;
+}
+
+.scheduler {
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    overflow: hidden;
+}
+
+section.main {
+    color: white;
+    background-color: skyblue;
+}
+
+section.main h1 {
+    text-align: center;
+    font-size: 35px;
+    line-height: 100px;
+}
+
+section.main .type {
+    display: flex;
+}
+
+section.main .type input {
+    background-color: gray;
+    box-sizing: border-box;
+    border: none;
+    width: 90%;
+    font-size: 25px;
+    color: white;
+    padding: 15px;
+}
+
+section.main .type input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+section.main .type input:focus {
+    outline-style: none;
+}
+
+section.main .type .icon {
+    width: 10%;
+    background-color: lightgray;
+    font-size: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#todoList li {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#todoList li .left {
+    display: flex;
+}
+
+#todoList li .left input {
+    width: 25px;
+    height: 25px;
+
+    margin-right: 20px;
+}
+
+#todoList li .left .text {
+    text-decoration: none;
+
+}
+
+#todoList li .left .line {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+#todoList li .right span {
+    font-size: 32px;
+    color: red;
+}
+
+#todoList li .right .lnr-undo {
+    color: green;
+    margin-right: 10px;
+}
+
+#todoList li .right .lnr-checkmark-circle {
+    color: green;
+    margin-right: 10px;
+}
+
+/* #todoList li .right .lnr-cross-circle {
+    color: green;
+    margin-right: 10px;
+} */
+
+.right .lnr{
+    cursor: pointer;
+}
+
+.test{
+    animation: removeall 1s linear forwards;
+    overflow: hidden;
+}
+
+/* .papa{ */
+    /* transform: translate(200px, 0); */
+    /* background: orangered; */
+    /* padding: 1px; */
+/* } */
+
+
+@keyframes removeall{
+    0%{
+    
+        transform: translate(-20px,0);
+        background: orangered;
+    }
+    25%{
+        transform: translate(-60px,0);
+        background: orangered;
+    }
+
+    50%{
+        transform: translate(-100px,0);
+        background: orangered;
+    }
+    100%{
+        transform: translate(-160px,0);
+        background: orangered;
+    }
+}
