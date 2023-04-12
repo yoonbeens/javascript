@@ -153,25 +153,35 @@ for (let i = 0; i < $undo.length; i++) {
     $undo[i].addEventListener('click', e => {
 
             if ($undo[i].classList.contains('lnr-undo')) {
-                $undo[i].classList.remove('lnr-undo')
-                $undo[i].classList.add('lnr-checkmark-circle')
+                $undo[i].classList.remove('lnr-undo');
+                $undo[i].classList.add('lnr-checkmark-circle');
                 
                 $text[i-1].style.display = 'none'
                 // $text[i-1].remove($text[i-1])
-                $left[i-1].appendChild($textarea)
+                $left[i-1].appendChild($textarea);
                 // $textarea.setAttribute('class', 'text');
-                $textarea.setAttribute('type', 'text')
+                $textarea.setAttribute('type', 'text');
                 $textarea.setAttribute('placeholder', $text[i-1].textContent)
                 console.log($text[i-1].textContent)
                 // type="text" placeholder="할 일을 입력하세요."
 
             } else if ($undo[i].classList.contains('lnr-checkmark-circle')) {
-                $undo[i].classList.remove('lnr-checkmark-circle')
-                $undo[i].classList.add('lnr-undo')
+                $undo[i].classList.remove('lnr-checkmark-circle');
+                $undo[i].classList.add('lnr-undo');
 
-                $text[i-1].style.display = 'block'
-                $textarea.style.display = 'none'
-                $text[i-1].textContent = $textarea.value
+                $text[i-1].style.display = 'block';
+                if($textarea.value === '') {
+                    $text[i-1].textContent = $textarea.placeholder;
+                    $textarea.remove($textarea);
+                } else if($textarea.value !== '') {
+                    $text[i-1].textContent = $textarea.value;
+                    $textarea.remove($textarea);
+                }
+
+
+                $textarea.remove($textarea);
+
+
                 
 
             }
