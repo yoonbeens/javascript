@@ -15,7 +15,7 @@ for(let i=0; i<$select.length; i++) {
         if(!$select[i].classList.contains('border')){
             for(let j=0; j<$select.length; j++){
                 $select[j].style.border = 'none'
-                $select[i].style.border = '5px solid black';
+                $select[i].style.border = '5px solid goldenrod';
                 $select[i].classList.add('border')
                 console.log($select[i])
             }

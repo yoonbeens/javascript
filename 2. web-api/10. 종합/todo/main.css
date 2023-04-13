@@ -75,6 +75,9 @@ section.main .type .icon {
 
     margin-right: 20px;
 }
+#todoList li .left input[type="text"] {
+    width: 200px;
+}
 
 #todoList li .left .text {
     text-decoration: none;
@@ -120,6 +123,7 @@ section.main .type .icon {
     /* background: orangered; */
     /* padding: 1px; */
 /* } */
+
 
 
 @keyframes removeall{

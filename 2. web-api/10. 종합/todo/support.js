@@ -9,10 +9,7 @@ const $leftext = document.querySelector('.left .text')
 const $rightremove = document.querySelectorAll('.right .lnr-cross-circle');
 const $papa = document.querySelector('#todoList .papa');
 
-const $undo = document.querySelectorAll('.lnr')
-const $check = document.querySelectorAll('input[type="checkbox"]')
-const $text = document.querySelectorAll('.text')
-const $left = document.querySelectorAll('.left')
+
 
 // let $shallowClone;
 
@@ -61,8 +58,9 @@ $input.addEventListener('keyup', function (e) {
         const $inputValue = $input.value;
         $input.value = '';
         const $shallowClone = $papa.cloneNode(true);
-        $shallowClone.children[0].children[0].children[1].textContent = $inputValue;
-        if ($shallowClone.children[0].children[0].children[1].textContent === '') {
+        const content = $shallowClone.children[0].children[0].children[1]
+        content.textContent = $inputValue;
+        if (content.textContent === '') {
             alert('빈칸은 입력할 수 없습니다! 입력해주세요.')
             return;
         }
@@ -83,6 +81,7 @@ $input.addEventListener('keyup', function (e) {
                 e.target.parentNode.parentNode.parentNode.remove();
             }, 1000);
         });
+
         $shallowClone.classList.remove('test')
 
         // console.log($shallowClone)
@@ -132,6 +131,13 @@ for (let $riri of $rightremove) {
     })
 }
 
+const $undo = document.querySelectorAll('.lnr')
+const $check = document.querySelectorAll('input[type="checkbox"]')
+const $text = document.querySelectorAll('.text')
+const $left = document.querySelectorAll('.left')
+const $textarea = document.createElement('input');
+const $todo = document.getElementById('todoList');
+
 // for (let $un of [...$undo]) {
 //     $un.addEventListener('click', e => {
 //         if (e.target.className === 'lnr-undo') {
@@ -147,47 +153,62 @@ for (let $riri of $rightremove) {
 
 // }
 
-const $textarea = document.createElement('input');
-
-for (let i = 0; i < $undo.length; i++) {
-    $undo[i].addEventListener('click', e => {
-
-            if ($undo[i].classList.contains('lnr-undo')) {
-                $undo[i].classList.remove('lnr-undo');
-                $undo[i].classList.add('lnr-checkmark-circle');
-                
-                $text[i-1].style.display = 'none'
-                // $text[i-1].remove($text[i-1])
-                $left[i-1].appendChild($textarea);
-                // $textarea.setAttribute('class', 'text');
-                $textarea.setAttribute('type', 'text');
-                $textarea.setAttribute('placeholder', $text[i-1].textContent)
-                console.log($text[i-1].textContent)
-                // type="text" placeholder="할 일을 입력하세요."
-
-            } else if ($undo[i].classList.contains('lnr-checkmark-circle')) {
-                $undo[i].classList.remove('lnr-checkmark-circle');
-                $undo[i].classList.add('lnr-undo');
-
-                $text[i-1].style.display = 'block';
-                if($textarea.value === '') {
-                    $text[i-1].textContent = $textarea.placeholder;
-                    $textarea.remove($textarea);
-                } else if($textarea.value !== '') {
-                    $text[i-1].textContent = $textarea.value;
-                    $textarea.remove($textarea);
-                }
 
 
-                $textarea.remove($textarea);
+// for (let i = 0; i < $todo.length; i++) {
+//     $todo[i].addEventListener('click', e => {
+//         if(e.target.classList.contains('lnr-undo')) {
+//             e.target.classList.remove('lnr-undo');
+//             e.target.classList.add('lnr-checkmark-circle');
+
+//             console.log
+//             // e.target.parentNode.parentNode.parentNode.children.children.appendChild($textarea)
+//             const left = e.target.parentNode.previousElementSibling;
+//             left.appendChild($textarea)
+
+//             $textarea.setAttribute('type', 'text');
+//             $textarea.setAttribute('placeholder', left.children[1].textContent);
+//             left.children[1].style.display = 'none';
+//         }
+//     })
+// }
+
+// for (let i = 0; i < $undo.length; i++) {
+//     $todo[i].addEventListener('click', e => {
+
+//             if (e.target.classList.contains('lnr-undo')) {
+//                 e.target.classList.remove('lnr-undo');
+//                 e.target.classList.add('lnr-checkmark-circle');
+
+//                 const left = e.target.parentNode.previousElementSibling;
+//                 console.log(left);
+
+//                 left.appendChild($textarea);
+
+//                 $textarea.setAttribute('type', 'text');
+//                 $textarea.setAttribute('placeholder', left.children[1].textContent);
+//                 console.log($text[i].textContent);
+//                 left.children[1].style.display = 'none';
 
 
-                
+//             } else if (e.target.classList.contains('lnr-checkmark-circle')) {
+//                 e.target.classList.remove('lnr-checkmark-circle');
+//                 e.target.classList.add('lnr-undo');
 
-            }
-        
-    })
-}
+//                 $text[i].style.display = 'block';
+//                 if($textarea.value === '') {
+//                     $text[i].textContent = $textarea.placeholder;
+//                     $textarea.remove($textarea);
+//                 } else if($textarea.value !== '') {
+//                     $text[i].textContent = $textarea.value;
+//                     $textarea.remove($textarea);
+//                 }
+
+
+//                 $textarea.remove($textarea);  
+//             }        
+//     })
+// }
 
 
 
@@ -199,6 +220,7 @@ for (let i = 0; i < $check.length; i++) {
                 if ($text[j].className === 'text') {
                     $text[j].classList.remove('text');
                     $text[j].classList.add('line');
+                    console.log($text[j])
                 } else if ($text[j].className === 'line') {
                     $text[j].classList.remove('line');
                     $text[j].classList.add('text');
@@ -207,6 +229,33 @@ for (let i = 0; i < $check.length; i++) {
         }
     });
 }
+
+// for(let i=0; i<$todo.length; i++) {
+//     $todo[i].e.target.addEventListener('click', e => {
+//         console.log($todo[i].children.children[0])
+
+//     })
+// }
+
+
+
+// $todo.addEventListener('click', e => {
+//     if (e.target.matches('.left input')) {
+//         // console.log(e.target);
+//         // e.target.nextSibling;
+//         console.log(e.target.nextSibling);
+//         for (i = 0; i < e.target.nextSibling.length; i++) {
+//             if (e.target.nextSibling[i].classList.contains('text')) {
+//                 e.target.nextSibling[i].classList.remove('text');
+//                 e.target.nextSibling[i].classList.add('line');
+//                 console.log('ggggg');
+//             } else if (e.target.nextSibling[i].classList.contains('line')) {
+//                 e.target.nextSibling[i].classList.remove('line');
+//                 e.target.nextSibling[i].classList.add('text');
+//             }
+//         }
+//     }
+// });
 
 
 // for (let $c of [...$check]) {
