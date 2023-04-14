@@ -27,7 +27,23 @@
     /* align-items: center; */
 }
 
-
+.wrap .support{
+    position: absolute;
+    background: black;
+    width: 150px;
+    
+    height: 80px;
+    left : 80%;
+    font-size: 20px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
 
 .wrap .intro .left {
     width: 300px;

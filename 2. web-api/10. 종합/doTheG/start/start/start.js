@@ -8,7 +8,21 @@ const $btn = document.querySelector('.btn')
 //         console.log($s)
 //     })
 // }
+const $support = document.querySelector('.support')
+$support.addEventListener('click',function(){
+    location.href='./support.html'
+})
 
+$btn.addEventListener('click',function(){
+    location.href='/2. web-api/10. 종합/doTheG/main/index.html'
+})
+
+function autoPopup(url, width, height) {
+    window.open(url, '_blank', 'width=' + width + ',height=' + height + ',top=180,left=1000');
+}
+  
+  
+autoPopup('./support.html', 700, 700);
 
 for(let i=0; i<$select.length; i++) {
     $select[i].addEventListener('click', e=> {

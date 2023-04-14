@@ -10,16 +10,22 @@
     <!-- reset.css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
 
-    <!--custom css-->
+    <!-- custom css -->
     <link rel="stylesheet" href="./main.css">
 
-    <link rel="icon" href="./favicon.ico">
-    <!-- custom js-->
+    <!-- favicon -->
+    <link rel="icon" href="./src/favicon.ico">
+
+    <!-- custom js -->
     <script src="./app.js" defer></script>
 
+    <!-- 드래그 방지 -->
+    <script type="text/javascript">
+        document.oncontextmenu = function () { return false; }
+    </script>
 </head>
 
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
     <div class="wrapper">
         <div class="cute"></div>
@@ -27,28 +33,48 @@
             <h1 class="main-title">신나는 두더지 게임~!</h1>
             <article class="number-wrapper">
 
-
                 <div class="center">
                     <button class="button button-first" data-type="square">
                         필살기!!!!
                     </button>
-
-
                 </div>
 
+                <div class="combo">콤보</div>
+                <div class="timer">60</div>
 
-                <div id="hole" class="hole1"></div>
-                <div id="hole" class="hole2"></div>
-                <div id="hole" class="hole3"></div>
-                <div id="hole" class="hole4"></div>
-                <div id="hole" class="hole5"></div>
-                <div id="hole" class="hole6"></div>
-                <div id="hole" class="hole7"></div>
-                <div id="hole" class="hole8"></div>
-                <div id="hole" class="hole9"></div>
+                <div id="hole" class="hole1">
+                    <div class="mask"></div>
+                </div>
+                <div id="hole" class="hole2">
+                    <div class="mask"></div>
+                </div>
+                <div id="hole" class="hole3">
+                    <div class="mask"></div>
+                </div>
+                <div id="hole" class="hole4">
+                    <div class="mask"></div>
+                </div>
+                <div id="hole" class="hole5">
+                    <div class="mask"></div>
+                </div>
+                <div id="hole" class="hole6">
+                    <div class="mask"></div>
+                </div>
+                <div id="hole" class="hole7">
+                    <div class="mask"></div>
+                </div>
+                <div id="hole" class="hole8">
+                    <div class="mask"></div>
+                </div>
+                <div id="hole" class="hole9">
+                    <div class="mask"></div>
+                </div>
+
             </article>
-            <h1 class="main-title sub-title">score:</h1>
+                <h1 class="main-title sub-title">Score: <span></span></h1>
         </section>
+
+
 
         <aside class="result">
 

@@ -213,22 +213,22 @@ const $todo = document.getElementById('todoList');
 
 
 
-for (let i = 0; i < $check.length; i++) {
-    $check[i].addEventListener('click', e => {
-        for (let j = 0; j < $text.length; j++) {
-            if ($check[i].parentNode === $text[j].parentNode) {
-                if ($text[j].className === 'text') {
-                    $text[j].classList.remove('text');
-                    $text[j].classList.add('line');
-                    console.log($text[j])
-                } else if ($text[j].className === 'line') {
-                    $text[j].classList.remove('line');
-                    $text[j].classList.add('text');
-                }
-            }
-        }
-    });
-}
+// for (let i = 0; i < $check.length; i++) {
+//     $check[i].addEventListener('click', e => {
+//         for (let j = 0; j < $text.length; j++) {
+//             if ($check[i].parentNode === $text[j].parentNode) {
+//                 if ($text[j].className === 'text') {
+//                     $text[j].classList.remove('text');
+//                     $text[j].classList.add('line');
+//                     console.log($text[j])
+//                 } else if ($text[j].className === 'line') {
+//                     $text[j].classList.remove('line');
+//                     $text[j].classList.add('text');
+//                 }
+//             }
+//         }
+//     });
+// }
 
 // for(let i=0; i<$todo.length; i++) {
 //     $todo[i].e.target.addEventListener('click', e => {
@@ -239,23 +239,23 @@ for (let i = 0; i < $check.length; i++) {
 
 
 
-// $todo.addEventListener('click', e => {
-//     if (e.target.matches('.left input')) {
-//         // console.log(e.target);
-//         // e.target.nextSibling;
-//         console.log(e.target.nextSibling);
-//         for (i = 0; i < e.target.nextSibling.length; i++) {
-//             if (e.target.nextSibling[i].classList.contains('text')) {
-//                 e.target.nextSibling[i].classList.remove('text');
-//                 e.target.nextSibling[i].classList.add('line');
-//                 console.log('ggggg');
-//             } else if (e.target.nextSibling[i].classList.contains('line')) {
-//                 e.target.nextSibling[i].classList.remove('line');
-//                 e.target.nextSibling[i].classList.add('text');
-//             }
-//         }
-//     }
-// });
+$todo.addEventListener('click', e => {
+    if (e.target.matches('.left input')) {
+        // console.log(e.target);
+        // e.target.nextSibling;
+        console.log(e.target.nextSibling);
+        // for (i = 0; i < e.target.nextSibling.length; i++) {
+            if (e.target.nextSibling[1].className === 'text') {
+                e.target.nextSibling[1].classList.remove('text');
+                e.target.nextSibling[1].classList.add('line');
+                console.log('ggggg' + e.target.nextSibling);
+            } else if (e.target.nextSibling[1].className === 'line') {
+                e.target.nextSibling[1].classList.remove('line');
+                e.target.nextSibling[1].classList.add('text');
+            }
+        // }
+    }
+});
 
 
 // for (let $c of [...$check]) {

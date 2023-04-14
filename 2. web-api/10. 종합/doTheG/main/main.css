@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'PilseungGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/PilseungGothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* reset */
 body {
-    cursor: url('./hammer.png') 50 50, auto;
+    cursor: url('./src/hammer.png') 20 60, auto;
+    resize: unset;
 }
 
 a {
@@ -15,26 +24,76 @@ a {
     background: #8c8c8c;
     height: 100vh;
     position: relative;
+    overflow: hidden;
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center */
+    
+}
+
+.wrapper .combo {
+    width: 300px;
+    height: 800px;
+    background: green;
+    position: absolute;
+    left: 100%;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.wrapper .timer {
+    width: 100px;
+    height: 80px;
+    color: green;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    font-family: 'PilseungGothic';
+    background: white;
+    position: absolute;
+    left: 105%;
+    top: 80%;
 }
 
 .wrapper .cute {
-    background: url(./1577627687755.jpg);
+    background: url(./src/fever.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    /* position: absolute; */
+    background-position: center;
+
+    position: absolute;
+    top: 20%;
     width: 100%;
-    height: 100%;
+    height: 20%;
+
     display: none;
     box-sizing: border-box;
     animation: slide 2s ease-in-out;
+    z-index: 1000;
 }
+
+
+/* .wrapper .section .char {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+} */
+
+/* .wrapper .section .char h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+} */
+
 
 @keyframes slide {
     0% {
         transform: translateX(-800px);
         opacity: 0;
     }
-    50%{
+
+    50% {
         transform: translateX(0px);
         opacity: 1;
     }
@@ -46,40 +105,41 @@ a {
 }
 
 section.main {
+    max-width: 943.13px;
     width: 70%;
     height: 800px;
     background: white;
     border-radius: 10px;
-    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: url(./grass.png);
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* overflow: auto; */
+    background: url(./src/grass.png);
+}
 
+section.main h1:first-child {
+    display: none;
 }
 
 section.main .main-title {
     padding: 30px 20px;
     font-size: 30px;
     font-weight: 700;
-    text-align: center;
-    background: #a3f8ff;
-    border-bottom: 1px solid #d3d3d3;
+    /* text-align: center; */
+    /* background: #a3f8ff; */
+    /* border-bottom: 1px solid #d3d3d3; */
 }
 
 .button {
+    cursor: url('./src/hammer.png') 20 60, auto;
     width: 150px;
     padding: 1em 1.5em;
     font-size: 1em;
     font-weight: 400;
     /* font-family: "Helvetica", "Arial", sans-serif; */
     border-radius: 10px;
-    cursor: url('./hammer.png') 50 50, auto;
     appearance: none;
     border: none;
     color: #ffffff;
@@ -95,6 +155,8 @@ section.main .main-title {
 .button-first {
     background: linear-gradient(to right, #e55d87, #5fc3e4);
     box-shadow: 0 2px 25px rgba(229, 93, 135, 0.5);
+    font-family: 'PilseungGothic';
+    /* font-size: 18px; max*/
 }
 
 .button-first:active {
@@ -124,10 +186,14 @@ particle {
     /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-   */
-    display: flex;
-    flex-direction: column;
+    transform: translate(-50%, -50%); */
+  
+    /* display: flex;
+    flex-direction: column; */
+
+    position: absolute;
+    top: 92.5%;
+    left: 100%;
 }
 
 section.main img {
@@ -137,7 +203,7 @@ section.main img {
 
 section.main #hole {
 
-    background: url(./hole.png);
+    background: url(./src/hole.png);
     width: 20%;
     height: 15%;
     background-size: contain;
@@ -149,56 +215,55 @@ section.main #hole {
 section.main .hole1 {
     position: absolute;
     left: 15%;
-    top: 23%
-        /* bottom: 1% */
+    top: 16%
 }
 
 section.main .hole2 {
     position: absolute;
     left: 42.5%;
-    top: 23%
+    top: 16%
 }
 
 section.main .hole3 {
     position: absolute;
     left: 70%;
-    top: 23%
+    top: 16%
 }
 
 section.main .hole4 {
     position: absolute;
     left: 15%;
-    top: 45%
+    top: 44%
 }
 
 section.main .hole5 {
     position: absolute;
     left: 42.5%;
-    top: 45%
+    top: 44%
 }
 
 section.main .hole6 {
     position: absolute;
     left: 70%;
-    top: 45%
+    top: 44%
 }
 
 section.main .hole7 {
     position: absolute;
     left: 15%;
-    top: 67%;
+    top: 72%;
 }
 
 section.main .hole8 {
     position: absolute;
     left: 42.5%;
-    top: 67%;
+    top: 72%;
 }
 
 section.main .hole9 {
     position: absolute;
     left: 70%;
-    top: 67%;
+    top: 72%;
 }
 
 /* section.main .number-wrapper {
@@ -215,4 +280,127 @@ section.main .sub-title {
     /* flex-direction: row;
     justify-content: end; */
 
+}
+
+/* 디그다 + 알로라 디그다 올라오는 애니메이션 */
+.digdaUp {
+    transform: translateY(10px);
+    animation: digdaUp 0.2s ease-in-out;
+}
+
+@keyframes digdaUp {
+    0% {
+        transform: translateY(300px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* 닥트리오 올라오는 애니메이션 */
+.doctrioUp {
+    transform: translate(38px, 10px);
+    animation: doctrioUp 0.2s ease-in-out;
+}
+
+@keyframes doctrioUp {
+    0% {
+        transform: translate(38px, 300px);
+    }
+
+    100% {
+        transform: translate(38px, 10px);
+    }
+}
+
+/* 디그다 + 알로라 디그다 내려가는 애니메이션 */
+.digdaDown {
+    transform: translateY(300px);
+    animation: digdaDown 0.2s ease-in-out;
+}
+
+@keyframes digdaDown {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(300px);
+    }
+}
+
+/* 닥트리오 내려가는 애니메이션 */
+.doctrioDown {
+    transform: translate(38px, 300px);
+    animation: doctrioDown 0.2s ease-in-out;
+}
+
+@keyframes doctrioDown {
+    0% {
+        transform: translate(38px, 10px);
+    }
+
+    100% {
+        transform: translate(38px, 300px);
+    }
+}
+
+/* 맞은 디그다 + 알로라 디그다 내려가는 애니메이션 */
+.sadDigda {
+    transform: translateY(300px);
+    animation: sadDigda 1s ease-in-out;
+}
+
+@keyframes sadDigda {
+    0% {
+        transform: translateY(30px);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(300px);
+    }
+}
+
+/* 맞은 닥트리오 내려가는 애니메이션 */
+.sadDoctrio {
+    transform: translate(38px, 300px);
+    animation: sadDoctrio 1s ease-in-out;
+}
+
+@keyframes sadDoctrio {
+    0% {
+        transform: translate(38px, 30px);
+    }
+
+    50% {
+        transform: translate(38px, 30px);
+    }
+
+    100% {
+        transform: translate(38px, 300px);
+    }
+}
+
+/* 마스크 입히기 */
+.mask {
+    /* background-color: tomato; */
+    width: 128%;
+    height: 220px;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -17px);
+    border-radius: 110px;
+
+    overflow: hidden;
+}
+
+.mask img {
+    z-index: 1000;
 }
